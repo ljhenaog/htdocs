@@ -1,0 +1,1115 @@
+2023-03-29 23:04:42 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/engine/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 92
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 13
+----------------------------------------------------------------
+MOD: elitetrick-theme
+
+FILE: admin/language/en-gb/design/layout.php
+CODE: $_['text_column_right']   = 'Column Right';
+LINE: 16
+
+FILE: admin/view/template/design/layout_form.twig
+CODE: <button type="button" onclick="addModule('content-bottom');" data-toggle="tooltip" title="{{ button_module_add }}" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i></button>
+LINE: 276
+CODE: $('#module-column-left, #module-column-right, #module-content-top, #module-content-bottom').delegate('select[name*=\'code\']', 'change', function() {
+LINE: 895
+CODE: $('#module-column-left, #module-column-right, #module-content-top, #module-content-bottom').trigger('change');
+LINE: 907
+
+FILE: catalog/controller/common/footer.php
+CODE: $data['powered'] = sprintf($this->language->get('text_powered'), $this->config->get('config_name'), date('Y', time()));
+LINE: 31
+CODE: return $this->load->view('common/footer', $data);
+LINE: 68
+
+FILE: catalog/controller/common/header.php
+CODE: $data['name'] = $this->config->get('config_name');
+LINE: 37
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 76
+CODE: return $this->load->view('common/header', $data);
+LINE: 90
+
+FILE: catalog/controller/common/menu.php
+CODE: $this->load->model('catalog/product');
+LINE: 8
+CODE: $categories = $this->model_catalog_category->getCategories(0);
+LINE: 22
+CODE: $children_data[] = array(
+LINE: 42
+CODE: 'name'  => $child['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
+LINE: 60
+
+FILE: catalog/controller/extension/module/bestseller.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 21
+CODE: 'thumb'       => $image,
+LINE: 59
+CODE: 'rating'      => $rating,
+LINE: 68
+CODE: 'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'])
+LINE: 72
+
+FILE: catalog/controller/extension/module/category.php
+CODE: public function index() {
+LINE: 2
+CODE: $this->load->language('extension/module/category');
+LINE: 5
+
+FILE: catalog/controller/extension/module/featured.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 28
+CODE: 'thumb'       => $image,
+LINE: 64
+CODE: 'rating'      => $rating,
+LINE: 73
+CODE: 'href'        => $this->url->link('product/product', 'product_id=' . $product_info['product_id'])
+LINE: 77
+
+FILE: catalog/controller/extension/module/latest.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 21
+CODE: 'thumb'       => $image,
+LINE: 57
+CODE: 'rating'      => $rating,
+LINE: 66
+CODE: 'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'])
+LINE: 70
+
+FILE: catalog/controller/extension/module/special.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 28
+CODE: 'thumb'       => $image,
+LINE: 64
+CODE: 'rating'      => $rating,
+LINE: 73
+CODE: 'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'])
+LINE: 77
+
+FILE: catalog/controller/product/category.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 171
+CODE: 'thumb'       => $image,
+LINE: 207
+CODE: 'tax'         => $tax,
+LINE: 215
+CODE: 'href'        => $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $result['product_id'] . $url)
+LINE: 221
+
+FILE: catalog/controller/product/compare.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 63
+CODE: 'thumb'        => $image,
+LINE: 104
+CODE: 'special'      => $special,
+LINE: 109
+
+FILE: catalog/controller/product/manufacturer.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 160
+CODE: 'thumb'       => $image,
+LINE: 196
+CODE: 'tax'         => $tax,
+LINE: 204
+CODE: 'href'        => $this->url->link('product/product', 'manufacturer_id=' . $result['manufacturer_id'] . '&product_id=' . $result['product_id'] . $url)
+LINE: 210
+
+FILE: catalog/controller/product/product.php
+CODE: if ((float)$result['special']) {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/product/search.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 197
+CODE: 'thumb'       => $image,
+LINE: 233
+CODE: 'tax'         => $tax,
+LINE: 241
+CODE: 'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url)
+LINE: 247
+
+FILE: catalog/controller/product/special.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 89
+CODE: 'thumb'       => $image,
+LINE: 125
+CODE: 'tax'         => $tax,
+LINE: 133
+CODE: 'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url)
+LINE: 139
+
+FILE: catalog/language/en-gb/en-gb.php
+CODE: $_['button_compare']        = 'Compare this Product';
+LINE: 32
+
+FILE: catalog/language/en-gb/checkout/cart.php
+CODE: $_['text_items']               = '%s item(s) - %s';
+LINE: 8
+CODE: $_['heading_title']            = 'My cart';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/en-gb/common/cart.php
+CODE: $_['text_items']     = '%s item(s) - %s';
+LINE: 2
+CODE: $_['heading_title']  = 'My cart';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/en-gb/common/menu.php
+CODE: $_['text_all'] = 'Show All';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/en-gb/common/header.php
+CODE: $_['text_wishlist']      = 'Wish List (%s)';
+LINE: 3
+CODE: $_['text_compare']      = 'compare';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/en-gb/account/wishlist.php
+CODE: $_['text_wishlist'] = 'Wish List (%s)';
+LINE: 7
+
+FILE: catalog/language/en-gb/common/footer.php
+CODE: $_['text_powered']      = 'Powered By <a href="http://www.opencart.com">OpenCart</a><br /> %s &copy; %s';
+LINE: 16
+
+FILE: catalog/language/en-gb/common/search.php
+CODE: $_['text_search'] = 'Search';
+LINE: 2
+
+FILE: catalog/language/en-gb/extension/module/featured.php
+CODE: $_['heading_title'] = 'Featured';
+LINE: 2
+
+FILE: catalog/language/en-gb/extension/module/latest.php
+CODE: $_['heading_title'] = 'Latest';
+LINE: 2
+
+FILE: catalog/language/en-gb/extension/module/bestseller.php
+CODE: $_['heading_title'] = 'Bestsellers';
+LINE: 2
+
+FILE: catalog/language/en-gb/extension/module/special.php
+CODE: $_['heading_title'] = 'deal of the week';
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+2023-03-29 23:06:40 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/engine/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 92
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 13
+----------------------------------------------------------------
+MOD: elitetrick-theme
+
+FILE: admin/language/en-gb/design/layout.php
+CODE: $_['text_column_right']   = 'Column Right';
+LINE: 16
+
+FILE: admin/view/template/design/layout_form.twig
+CODE: <button type="button" onclick="addModule('content-bottom');" data-toggle="tooltip" title="{{ button_module_add }}" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i></button>
+LINE: 276
+CODE: $('#module-column-left, #module-column-right, #module-content-top, #module-content-bottom').delegate('select[name*=\'code\']', 'change', function() {
+LINE: 895
+CODE: $('#module-column-left, #module-column-right, #module-content-top, #module-content-bottom').trigger('change');
+LINE: 907
+
+FILE: catalog/controller/common/footer.php
+CODE: $data['powered'] = sprintf($this->language->get('text_powered'), $this->config->get('config_name'), date('Y', time()));
+LINE: 31
+CODE: return $this->load->view('common/footer', $data);
+LINE: 68
+
+FILE: catalog/controller/common/header.php
+CODE: $data['name'] = $this->config->get('config_name');
+LINE: 37
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 76
+CODE: return $this->load->view('common/header', $data);
+LINE: 90
+
+FILE: catalog/controller/common/menu.php
+CODE: $this->load->model('catalog/product');
+LINE: 8
+CODE: $categories = $this->model_catalog_category->getCategories(0);
+LINE: 22
+CODE: $children_data[] = array(
+LINE: 42
+CODE: 'name'  => $child['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
+LINE: 60
+
+FILE: catalog/controller/extension/module/bestseller.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 21
+CODE: 'thumb'       => $image,
+LINE: 59
+CODE: 'rating'      => $rating,
+LINE: 68
+CODE: 'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'])
+LINE: 72
+
+FILE: catalog/controller/extension/module/category.php
+CODE: public function index() {
+LINE: 2
+CODE: $this->load->language('extension/module/category');
+LINE: 5
+
+FILE: catalog/controller/extension/module/featured.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 28
+CODE: 'thumb'       => $image,
+LINE: 64
+CODE: 'rating'      => $rating,
+LINE: 73
+CODE: 'href'        => $this->url->link('product/product', 'product_id=' . $product_info['product_id'])
+LINE: 77
+
+FILE: catalog/controller/extension/module/latest.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 21
+CODE: 'thumb'       => $image,
+LINE: 57
+CODE: 'rating'      => $rating,
+LINE: 66
+CODE: 'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'])
+LINE: 70
+
+FILE: catalog/controller/extension/module/special.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 28
+CODE: 'thumb'       => $image,
+LINE: 64
+CODE: 'rating'      => $rating,
+LINE: 73
+CODE: 'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'])
+LINE: 77
+
+FILE: catalog/controller/product/category.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 171
+CODE: 'thumb'       => $image,
+LINE: 207
+CODE: 'tax'         => $tax,
+LINE: 215
+CODE: 'href'        => $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $result['product_id'] . $url)
+LINE: 221
+
+FILE: catalog/controller/product/compare.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 63
+CODE: 'thumb'        => $image,
+LINE: 104
+CODE: 'special'      => $special,
+LINE: 109
+
+FILE: catalog/controller/product/manufacturer.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 160
+CODE: 'thumb'       => $image,
+LINE: 196
+CODE: 'tax'         => $tax,
+LINE: 204
+CODE: 'href'        => $this->url->link('product/product', 'manufacturer_id=' . $result['manufacturer_id'] . '&product_id=' . $result['product_id'] . $url)
+LINE: 210
+
+FILE: catalog/controller/product/product.php
+CODE: if ((float)$result['special']) {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/product/search.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 197
+CODE: 'thumb'       => $image,
+LINE: 233
+CODE: 'tax'         => $tax,
+LINE: 241
+CODE: 'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url)
+LINE: 247
+
+FILE: catalog/controller/product/special.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 89
+CODE: 'thumb'       => $image,
+LINE: 125
+CODE: 'tax'         => $tax,
+LINE: 133
+CODE: 'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url)
+LINE: 139
+
+FILE: catalog/language/en-gb/en-gb.php
+CODE: $_['button_compare']        = 'Compare this Product';
+LINE: 32
+
+FILE: catalog/language/en-gb/checkout/cart.php
+CODE: $_['text_items']               = '%s item(s) - %s';
+LINE: 8
+CODE: $_['heading_title']            = 'My cart';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/en-gb/common/cart.php
+CODE: $_['text_items']     = '%s item(s) - %s';
+LINE: 2
+CODE: $_['heading_title']  = 'My cart';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/en-gb/common/menu.php
+CODE: $_['text_all'] = 'Show All';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/en-gb/common/header.php
+CODE: $_['text_wishlist']      = 'Wish List (%s)';
+LINE: 3
+CODE: $_['text_compare']      = 'compare';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/en-gb/account/wishlist.php
+CODE: $_['text_wishlist'] = 'Wish List (%s)';
+LINE: 7
+
+FILE: catalog/language/en-gb/common/footer.php
+CODE: $_['text_powered']      = 'Powered By <a href="http://www.opencart.com">OpenCart</a><br /> %s &copy; %s';
+LINE: 16
+
+FILE: catalog/language/en-gb/common/search.php
+CODE: $_['text_search'] = 'Search';
+LINE: 2
+
+FILE: catalog/language/en-gb/extension/module/featured.php
+CODE: $_['heading_title'] = 'Featured';
+LINE: 2
+
+FILE: catalog/language/en-gb/extension/module/latest.php
+CODE: $_['heading_title'] = 'Latest';
+LINE: 2
+
+FILE: catalog/language/en-gb/extension/module/bestseller.php
+CODE: $_['heading_title'] = 'Bestsellers';
+LINE: 2
+
+FILE: catalog/language/en-gb/extension/module/special.php
+CODE: $_['heading_title'] = 'deal of the week';
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+2023-03-29 23:06:42 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/engine/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 92
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 13
+----------------------------------------------------------------
+MOD: elitetrick-theme
+
+FILE: admin/language/en-gb/design/layout.php
+CODE: $_['text_column_right']   = 'Column Right';
+LINE: 16
+
+FILE: admin/view/template/design/layout_form.twig
+CODE: <button type="button" onclick="addModule('content-bottom');" data-toggle="tooltip" title="{{ button_module_add }}" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i></button>
+LINE: 276
+CODE: $('#module-column-left, #module-column-right, #module-content-top, #module-content-bottom').delegate('select[name*=\'code\']', 'change', function() {
+LINE: 895
+CODE: $('#module-column-left, #module-column-right, #module-content-top, #module-content-bottom').trigger('change');
+LINE: 907
+
+FILE: catalog/controller/common/footer.php
+CODE: $data['powered'] = sprintf($this->language->get('text_powered'), $this->config->get('config_name'), date('Y', time()));
+LINE: 31
+CODE: return $this->load->view('common/footer', $data);
+LINE: 68
+
+FILE: catalog/controller/common/header.php
+CODE: $data['name'] = $this->config->get('config_name');
+LINE: 37
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 76
+CODE: return $this->load->view('common/header', $data);
+LINE: 90
+
+FILE: catalog/controller/common/menu.php
+CODE: $this->load->model('catalog/product');
+LINE: 8
+CODE: $categories = $this->model_catalog_category->getCategories(0);
+LINE: 22
+CODE: $children_data[] = array(
+LINE: 42
+CODE: 'name'  => $child['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
+LINE: 60
+
+FILE: catalog/controller/extension/module/bestseller.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 21
+CODE: 'thumb'       => $image,
+LINE: 59
+CODE: 'rating'      => $rating,
+LINE: 68
+CODE: 'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'])
+LINE: 72
+
+FILE: catalog/controller/extension/module/category.php
+CODE: public function index() {
+LINE: 2
+CODE: $this->load->language('extension/module/category');
+LINE: 5
+
+FILE: catalog/controller/extension/module/featured.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 28
+CODE: 'thumb'       => $image,
+LINE: 64
+CODE: 'rating'      => $rating,
+LINE: 73
+CODE: 'href'        => $this->url->link('product/product', 'product_id=' . $product_info['product_id'])
+LINE: 77
+
+FILE: catalog/controller/extension/module/latest.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 21
+CODE: 'thumb'       => $image,
+LINE: 57
+CODE: 'rating'      => $rating,
+LINE: 66
+CODE: 'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'])
+LINE: 70
+
+FILE: catalog/controller/extension/module/special.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 28
+CODE: 'thumb'       => $image,
+LINE: 64
+CODE: 'rating'      => $rating,
+LINE: 73
+CODE: 'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'])
+LINE: 77
+
+FILE: catalog/controller/product/category.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 171
+CODE: 'thumb'       => $image,
+LINE: 207
+CODE: 'tax'         => $tax,
+LINE: 215
+CODE: 'href'        => $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $result['product_id'] . $url)
+LINE: 221
+
+FILE: catalog/controller/product/compare.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 63
+CODE: 'thumb'        => $image,
+LINE: 104
+CODE: 'special'      => $special,
+LINE: 109
+
+FILE: catalog/controller/product/manufacturer.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 160
+CODE: 'thumb'       => $image,
+LINE: 196
+CODE: 'tax'         => $tax,
+LINE: 204
+CODE: 'href'        => $this->url->link('product/product', 'manufacturer_id=' . $result['manufacturer_id'] . '&product_id=' . $result['product_id'] . $url)
+LINE: 210
+
+FILE: catalog/controller/product/product.php
+CODE: if ((float)$result['special']) {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/product/search.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 197
+CODE: 'thumb'       => $image,
+LINE: 233
+CODE: 'tax'         => $tax,
+LINE: 241
+CODE: 'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url)
+LINE: 247
+
+FILE: catalog/controller/product/special.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 89
+CODE: 'thumb'       => $image,
+LINE: 125
+CODE: 'tax'         => $tax,
+LINE: 133
+CODE: 'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url)
+LINE: 139
+
+FILE: catalog/language/en-gb/en-gb.php
+CODE: $_['button_compare']        = 'Compare this Product';
+LINE: 32
+
+FILE: catalog/language/en-gb/checkout/cart.php
+CODE: $_['text_items']               = '%s item(s) - %s';
+LINE: 8
+CODE: $_['heading_title']            = 'My cart';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/en-gb/common/cart.php
+CODE: $_['text_items']     = '%s item(s) - %s';
+LINE: 2
+CODE: $_['heading_title']  = 'My cart';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/en-gb/common/menu.php
+CODE: $_['text_all'] = 'Show All';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/en-gb/common/header.php
+CODE: $_['text_wishlist']      = 'Wish List (%s)';
+LINE: 3
+CODE: $_['text_compare']      = 'compare';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/en-gb/account/wishlist.php
+CODE: $_['text_wishlist'] = 'Wish List (%s)';
+LINE: 7
+
+FILE: catalog/language/en-gb/common/footer.php
+CODE: $_['text_powered']      = 'Powered By <a href="http://www.opencart.com">OpenCart</a><br /> %s &copy; %s';
+LINE: 16
+
+FILE: catalog/language/en-gb/common/search.php
+CODE: $_['text_search'] = 'Search';
+LINE: 2
+
+FILE: catalog/language/en-gb/extension/module/featured.php
+CODE: $_['heading_title'] = 'Featured';
+LINE: 2
+
+FILE: catalog/language/en-gb/extension/module/latest.php
+CODE: $_['heading_title'] = 'Latest';
+LINE: 2
+
+FILE: catalog/language/en-gb/extension/module/bestseller.php
+CODE: $_['heading_title'] = 'Bestsellers';
+LINE: 2
+
+FILE: catalog/language/en-gb/extension/module/special.php
+CODE: $_['heading_title'] = 'deal of the week';
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+2023-03-29 23:07:16 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/engine/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 92
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 13
+----------------------------------------------------------------
+MOD: elitetrick-theme
+
+FILE: admin/language/en-gb/design/layout.php
+CODE: $_['text_column_right']   = 'Column Right';
+LINE: 16
+
+FILE: admin/view/template/design/layout_form.twig
+CODE: <button type="button" onclick="addModule('content-bottom');" data-toggle="tooltip" title="{{ button_module_add }}" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i></button>
+LINE: 276
+CODE: $('#module-column-left, #module-column-right, #module-content-top, #module-content-bottom').delegate('select[name*=\'code\']', 'change', function() {
+LINE: 895
+CODE: $('#module-column-left, #module-column-right, #module-content-top, #module-content-bottom').trigger('change');
+LINE: 907
+
+FILE: catalog/controller/common/footer.php
+CODE: $data['powered'] = sprintf($this->language->get('text_powered'), $this->config->get('config_name'), date('Y', time()));
+LINE: 31
+CODE: return $this->load->view('common/footer', $data);
+LINE: 68
+
+FILE: catalog/controller/common/header.php
+CODE: $data['name'] = $this->config->get('config_name');
+LINE: 37
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 76
+CODE: return $this->load->view('common/header', $data);
+LINE: 90
+
+FILE: catalog/controller/common/menu.php
+CODE: $this->load->model('catalog/product');
+LINE: 8
+CODE: $categories = $this->model_catalog_category->getCategories(0);
+LINE: 22
+CODE: $children_data[] = array(
+LINE: 42
+CODE: 'name'  => $child['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
+LINE: 60
+
+FILE: catalog/controller/extension/module/bestseller.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 21
+CODE: 'thumb'       => $image,
+LINE: 59
+CODE: 'rating'      => $rating,
+LINE: 68
+CODE: 'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'])
+LINE: 72
+
+FILE: catalog/controller/extension/module/category.php
+CODE: public function index() {
+LINE: 2
+CODE: $this->load->language('extension/module/category');
+LINE: 5
+
+FILE: catalog/controller/extension/module/featured.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 28
+CODE: 'thumb'       => $image,
+LINE: 64
+CODE: 'rating'      => $rating,
+LINE: 73
+CODE: 'href'        => $this->url->link('product/product', 'product_id=' . $product_info['product_id'])
+LINE: 77
+
+FILE: catalog/controller/extension/module/latest.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 21
+CODE: 'thumb'       => $image,
+LINE: 57
+CODE: 'rating'      => $rating,
+LINE: 66
+CODE: 'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'])
+LINE: 70
+
+FILE: catalog/controller/extension/module/special.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 28
+CODE: 'thumb'       => $image,
+LINE: 64
+CODE: 'rating'      => $rating,
+LINE: 73
+CODE: 'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'])
+LINE: 77
+
+FILE: catalog/controller/product/category.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 171
+CODE: 'thumb'       => $image,
+LINE: 207
+CODE: 'tax'         => $tax,
+LINE: 215
+CODE: 'href'        => $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $result['product_id'] . $url)
+LINE: 221
+
+FILE: catalog/controller/product/compare.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 63
+CODE: 'thumb'        => $image,
+LINE: 104
+CODE: 'special'      => $special,
+LINE: 109
+
+FILE: catalog/controller/product/manufacturer.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 160
+CODE: 'thumb'       => $image,
+LINE: 196
+CODE: 'tax'         => $tax,
+LINE: 204
+CODE: 'href'        => $this->url->link('product/product', 'manufacturer_id=' . $result['manufacturer_id'] . '&product_id=' . $result['product_id'] . $url)
+LINE: 210
+
+FILE: catalog/controller/product/product.php
+CODE: if ((float)$result['special']) {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/product/search.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 197
+CODE: 'thumb'       => $image,
+LINE: 233
+CODE: 'tax'         => $tax,
+LINE: 241
+CODE: 'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url)
+LINE: 247
+
+FILE: catalog/controller/product/special.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 89
+CODE: 'thumb'       => $image,
+LINE: 125
+CODE: 'tax'         => $tax,
+LINE: 133
+CODE: 'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url)
+LINE: 139
+
+FILE: catalog/language/en-gb/en-gb.php
+CODE: $_['button_compare']        = 'Compare this Product';
+LINE: 32
+
+FILE: catalog/language/en-gb/checkout/cart.php
+CODE: $_['text_items']               = '%s item(s) - %s';
+LINE: 8
+CODE: $_['heading_title']            = 'My cart';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/en-gb/common/cart.php
+CODE: $_['text_items']     = '%s item(s) - %s';
+LINE: 2
+CODE: $_['heading_title']  = 'My cart';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/en-gb/common/menu.php
+CODE: $_['text_all'] = 'Show All';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/en-gb/common/header.php
+CODE: $_['text_wishlist']      = 'Wish List (%s)';
+LINE: 3
+CODE: $_['text_compare']      = 'compare';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/en-gb/account/wishlist.php
+CODE: $_['text_wishlist'] = 'Wish List (%s)';
+LINE: 7
+
+FILE: catalog/language/en-gb/common/footer.php
+CODE: $_['text_powered']      = 'Powered By <a href="http://www.opencart.com">OpenCart</a><br /> %s &copy; %s';
+LINE: 16
+
+FILE: catalog/language/en-gb/common/search.php
+CODE: $_['text_search'] = 'Search';
+LINE: 2
+
+FILE: catalog/language/en-gb/extension/module/featured.php
+CODE: $_['heading_title'] = 'Featured';
+LINE: 2
+
+FILE: catalog/language/en-gb/extension/module/latest.php
+CODE: $_['heading_title'] = 'Latest';
+LINE: 2
+
+FILE: catalog/language/en-gb/extension/module/bestseller.php
+CODE: $_['heading_title'] = 'Bestsellers';
+LINE: 2
+
+FILE: catalog/language/en-gb/extension/module/special.php
+CODE: $_['heading_title'] = 'deal of the week';
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+2023-03-29 23:49:14 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/engine/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 92
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 13
+----------------------------------------------------------------
+MOD: elitetrick-theme
+
+FILE: admin/language/en-gb/design/layout.php
+CODE: $_['text_column_right']   = 'Column Right';
+LINE: 16
+
+FILE: admin/view/template/design/layout_form.twig
+CODE: <button type="button" onclick="addModule('content-bottom');" data-toggle="tooltip" title="{{ button_module_add }}" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i></button>
+LINE: 276
+CODE: $('#module-column-left, #module-column-right, #module-content-top, #module-content-bottom').delegate('select[name*=\'code\']', 'change', function() {
+LINE: 895
+CODE: $('#module-column-left, #module-column-right, #module-content-top, #module-content-bottom').trigger('change');
+LINE: 907
+
+FILE: catalog/controller/common/footer.php
+CODE: $data['powered'] = sprintf($this->language->get('text_powered'), $this->config->get('config_name'), date('Y', time()));
+LINE: 31
+CODE: return $this->load->view('common/footer', $data);
+LINE: 68
+
+FILE: catalog/controller/common/header.php
+CODE: $data['name'] = $this->config->get('config_name');
+LINE: 37
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 76
+CODE: return $this->load->view('common/header', $data);
+LINE: 90
+
+FILE: catalog/controller/common/menu.php
+CODE: $this->load->model('catalog/product');
+LINE: 8
+CODE: $categories = $this->model_catalog_category->getCategories(0);
+LINE: 22
+CODE: $children_data[] = array(
+LINE: 42
+CODE: 'name'  => $child['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
+LINE: 60
+
+FILE: catalog/controller/extension/module/bestseller.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 21
+CODE: 'thumb'       => $image,
+LINE: 59
+CODE: 'rating'      => $rating,
+LINE: 68
+CODE: 'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'])
+LINE: 72
+
+FILE: catalog/controller/extension/module/category.php
+CODE: public function index() {
+LINE: 2
+CODE: $this->load->language('extension/module/category');
+LINE: 5
+
+FILE: catalog/controller/extension/module/featured.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 28
+CODE: 'thumb'       => $image,
+LINE: 64
+CODE: 'rating'      => $rating,
+LINE: 73
+CODE: 'href'        => $this->url->link('product/product', 'product_id=' . $product_info['product_id'])
+LINE: 77
+
+FILE: catalog/controller/extension/module/latest.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 21
+CODE: 'thumb'       => $image,
+LINE: 57
+CODE: 'rating'      => $rating,
+LINE: 66
+CODE: 'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'])
+LINE: 70
+
+FILE: catalog/controller/extension/module/special.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 28
+CODE: 'thumb'       => $image,
+LINE: 64
+CODE: 'rating'      => $rating,
+LINE: 73
+CODE: 'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'])
+LINE: 77
+
+FILE: catalog/controller/product/category.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 171
+CODE: 'thumb'       => $image,
+LINE: 207
+CODE: 'tax'         => $tax,
+LINE: 215
+CODE: 'href'        => $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $result['product_id'] . $url)
+LINE: 221
+
+FILE: catalog/controller/product/compare.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 63
+CODE: 'thumb'        => $image,
+LINE: 104
+CODE: 'special'      => $special,
+LINE: 109
+
+FILE: catalog/controller/product/manufacturer.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 160
+CODE: 'thumb'       => $image,
+LINE: 196
+CODE: 'tax'         => $tax,
+LINE: 204
+CODE: 'href'        => $this->url->link('product/product', 'manufacturer_id=' . $result['manufacturer_id'] . '&product_id=' . $result['product_id'] . $url)
+LINE: 210
+
+FILE: catalog/controller/product/product.php
+CODE: if ((float)$result['special']) {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/product/search.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 197
+CODE: 'thumb'       => $image,
+LINE: 233
+CODE: 'tax'         => $tax,
+LINE: 241
+CODE: 'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url)
+LINE: 247
+
+FILE: catalog/controller/product/special.php
+CODE: if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+LINE: 89
+CODE: 'thumb'       => $image,
+LINE: 125
+CODE: 'tax'         => $tax,
+LINE: 133
+CODE: 'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url)
+LINE: 139
+
+FILE: catalog/language/en-gb/en-gb.php
+CODE: $_['button_compare']        = 'Compare this Product';
+LINE: 32
+
+FILE: catalog/language/en-gb/checkout/cart.php
+CODE: $_['text_items']               = '%s item(s) - %s';
+LINE: 8
+CODE: $_['heading_title']            = 'My cart';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/en-gb/common/cart.php
+CODE: $_['text_items']     = '%s item(s) - %s';
+LINE: 2
+CODE: $_['heading_title']  = 'My cart';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/en-gb/common/menu.php
+CODE: $_['text_all'] = 'Show All';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/en-gb/common/header.php
+CODE: $_['text_wishlist']      = 'Wish List (%s)';
+LINE: 3
+CODE: $_['text_compare']      = 'compare';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/en-gb/account/wishlist.php
+CODE: $_['text_wishlist'] = 'Wish List (%s)';
+LINE: 7
+
+FILE: catalog/language/en-gb/common/footer.php
+CODE: $_['text_powered']      = 'Powered By <a href="http://www.opencart.com">OpenCart</a><br /> %s &copy; %s';
+LINE: 16
+
+FILE: catalog/language/en-gb/common/search.php
+CODE: $_['text_search'] = 'Search';
+LINE: 2
+
+FILE: catalog/language/en-gb/extension/module/featured.php
+CODE: $_['heading_title'] = 'Featured';
+LINE: 2
+
+FILE: catalog/language/en-gb/extension/module/latest.php
+CODE: $_['heading_title'] = 'Latest';
+LINE: 2
+
+FILE: catalog/language/en-gb/extension/module/bestseller.php
+CODE: $_['heading_title'] = 'Bestsellers';
+LINE: 2
+
+FILE: catalog/language/en-gb/extension/module/special.php
+CODE: $_['heading_title'] = 'deal of the week';
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
